@@ -15,13 +15,14 @@ exports.getData = async (url, id, keys) => {
         entries,
         lexicalCategory: { text: wordtype }
       } = entry;
+      let indexnr = 1;
       // console.log of word and word type
       console.log(`${myWord} (${wordtype})`);
       entries.forEach(item => {
         item.senses.forEach(sense => {
-          sense.shortDefinitions.forEach((definition, index) => {
+          sense.shortDefinitions.forEach(definition => {
             // console.log of list of definitions
-            console.log(`${index + 1}. ${definition}`);
+            console.log(`${indexnr++}. ${definition}`);
           });
         });
       });
